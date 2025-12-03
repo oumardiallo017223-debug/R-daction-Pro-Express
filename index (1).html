@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rédaction Pro Express - Votre article professionnel livré en 5 minutes par email. Service de rédaction automatique pour blogueurs, entrepreneurs et PME en Afrique.">
+    <meta name="keywords" content="rédaction article, contenu SEO, blog, Afrique, Côte d'Ivoire, Sénégal, rédaction professionnelle">
+    <meta name="author" content="Rédaction Pro Express">
+    <meta property="og:title" content="Rédaction Pro Express - Articles professionnels en 5 minutes">
+    <meta property="og:description" content="Service de rédaction d'articles automatique livré en 5 minutes par email. 2 500 FCFA seulement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://graceful-semifreddo-e312fe.netlify.app/">
+    <title>Rédaction Pro Express | Articles Professionnels en 5 Minutes</title>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --text-dark: #1a1a2e;
+            --text-medium: #4a4a6a;
+            --text-light: #6b7280;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fc;
+            --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.08);
+            --shadow-md: 0 4px 20px rgba(102, 126, 234, 0.12);
+            --shadow-lg: 0 8px 40px rgba(102, 126, 234, 0.16);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        .btn-large {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            border-radius: var(--radius-md);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(118, 75, 162, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge span {
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        h1 .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: var(--primary-color);
+            margin-left: 4px;
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            margin-bottom: 16px;
+            max-width: 480px;
+        }
+
+        .hero-price {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .hero-price .amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-price .currency {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out 0.2s both;
+        }
+
+        .hero-illustration {
+            width: 100%;
+            max-width: 520px;
+            position: relative;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-card.card-1 {
+            top: 10%;
+            right: 0;
+            animation-delay: 0s;
+        }
+
+        .floating-card.card-2 {
+            bottom: 20%;
+            left: 0;
+            animation-delay: 1s;
+        }
+
+        .floating-card.card-3 {
+            bottom: 5%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .floating-card .text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .floating-card .subtext {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .document-illustration {
+            width: 100%;
+            height: 400px;
+            background: var(--primary-gradient);
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .doc-header {
+            height: 50px;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 8px;
+        }
+
+        .doc-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .doc-content {
+            padding: 30px;
+        }
+
+        .doc-line {
+            height: 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .doc-line:nth-child(1) { width: 80%; }
+        .doc-line:nth-child(2) { width: 100%; }
+        .doc-line:nth-child(3) { width: 60%; }
+        .doc-line:nth-child(4) { width: 90%; }
+        .doc-line:nth-child(5) { width: 75%; }
+        .doc-line:nth-child(6) { width: 85%; }
+
+        /* Section Common Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Avantages Section */
+        #avantages {
+            background: var(--bg-light);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .advantage-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .advantage-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .advantage-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-gradient);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .advantage-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .advantage-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .counter-box {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--primary-gradient);
+            border-radius: var(--radius-lg);
+            color: white;
+        }
+
+        .counter-number {
+            font-size: 4rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .counter-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Exemples Section */
+        #exemples {
+            background: white;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .example-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px;
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            border-left: 4px solid;
+            border-image: var(--primary-gradient) 1;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .example-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .example-card:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+            transform: translateX(8px);
+        }
+
+        .example-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .example-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Comment ça marche Section */
+        #fonctionnement {
+            background: var(--bg-light);
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: var(--primary-gradient);
+            z-index: 0;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .step-number {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 24px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 3px solid rgba(102, 126, 234, 0.2);
+            border-radius: 50%;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* Témoignages Section */
+        #temoignages {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            position: relative;
+            transition: var(--transition);
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .testimonial-card:hover {
+            background: white;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 4rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .author-info span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        #faq {
+            background: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 28px;
+            background: white;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding: 0 28px 24px;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* Commander Section */
+        #commander {
+            background: white;
+        }
+
+        .order-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .order-info h2 {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .order-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .order-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 1rem;
+            color: var(--text-medium);
+        }
+
+        .order-features li span {
+            width: 28px;
+            height: 28px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .order-form-container {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-price {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: #ef4444;
+        }
+
+        .form-group input.success,
+        .form-group textarea.success {
+            border-color: #22c55e;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .error-message {
+            font-size: 0.85rem;
+            color: #ef4444;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .form-group.has-error .error-message {
+            display: block;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+        }
+
+        .trust-badges {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .trust-badges .badge-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .payment-icon {
+            padding: 8px 16px;
+            background: white;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .success-message h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .success-message p {
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-gradient);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .logo span {
+            background: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-column ul a:hover {
+            color: white;
+        }
+
+        .footer-contact {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+
+        .footer-payment {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .footer-payment span {
+            padding: 6px 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .hero-visual {
+                order: 0;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-subtitle {
+                margin: 0 auto 16px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .order-container {
+                grid-template-columns: 1fr;
+            }
+
+            .order-info {
+                text-align: center;
+            }
+
+            .order-info h2 {
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                gap: 16px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+
+            .step-number {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-payment {
+                justify-content: center;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .order-form-container {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-price .amount {
+                font-size: 2rem;
+            }
+
+            .btn-large {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+
+            .floating-card {
+                display: none;
+            }
+
+            .counter-number {
+                font-size: 3rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">📝 <span>Rédaction Pro Express</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#avantages">Avantages</a></li>
+                <li><a href="#fonctionnement">Fonctionnement</a></li>
+                <li><a href="#temoignages">Témoignages</a></li>
+                <li><a href="#commander">Commander</a></li>
+            </ul>
+            <a href="#commander" class="btn btn-primary nav-cta">Commander - 2 500 FCFA</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>🔥</span> Service automatisé disponible 24h/24
+                </div>
+                <h1>
+                    <span id="typingText"></span><span class="typing-cursor"></span>
+                </h1>
+                <p class="hero-subtitle">Votre article professionnel livré en 5 minutes par email. Idéal pour blogueurs, entrepreneurs et PME.</p>
+                <div class="hero-price">
+                    <span class="amount">2 500</span>
+                    <span class="currency">FCFA</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="#commander" class="btn btn-primary btn-large">Commander maintenant</a>
+                    <a href="#fonctionnement" class="btn btn-secondary btn-large">Comment ça marche</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-illustration">
+                    <div class="document-illustration">
+                        <div class="doc-header">
+                            <div class="doc-dot"></div>
+                            <div class="doc-dot"></div>
+                            <div class="doc-dot"></div>
+                        </div>
+                        <div class="doc-content">
+                            <div class="doc-line"></div>
+                            <div class="doc-line"></div>
+                            <div class="doc-line"></div>
+                            <div class="doc-line"></div>
+                            <div class="doc-line"></div>
+                            <div class="doc-line"></div>
+                        </div>
+                    </div>
+                    <div class="floating-card card-1">
+                        <div class="icon">⚡</div>
+                        <div class="text">5 minutes</div>
+                        <div class="subtext">Livraison express</div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="icon">✨</div>
+                        <div class="text">100% unique</div>
+                        <div class="subtext">Contenu original</div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="icon">📈</div>
+                        <div class="text">SEO optimisé</div>
+                        <div class="subtext">Meilleur référencement</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages Section -->
+    <section id="avantages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">✨ Avantages</span>
+                <h2>Pourquoi choisir Rédaction Pro Express ?</h2>
+                <p class="section-subtitle">Un service pensé pour les professionnels africains qui veulent publier rapidement du contenu de qualité.</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card" data-delay="0">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>Livraison immédiate</h3>
+                    <p>Recevez votre article complet en 5 minutes par email. Plus besoin d'attendre des jours pour votre contenu.</p>
+                </div>
+                <div class="advantage-card" data-delay="100">
+                    <div class="advantage-icon">✨</div>
+                    <h3>Qualité professionnelle</h3>
+                    <p>Articles rédigés selon les standards professionnels avec une structure claire et un style engageant.</p>
+                </div>
+                <div class="advantage-card" data-delay="200">
+                    <div class="advantage-icon">📄</div>
+                    <h3>Format HTML prêt</h3>
+                    <p>Contenu formaté et prêt à publier directement sur votre blog ou site web sans modification.</p>
+                </div>
+                <div class="advantage-card" data-delay="300">
+                    <div class="advantage-icon">🔒</div>
+                    <h3>Paiement sécurisé</h3>
+                    <p>Payez en toute sécurité via Wave, Orange Money, MTN Money ou Carte bancaire.</p>
+                </div>
+                <div class="advantage-card" data-delay="400">
+                    <div class="advantage-icon">🎯</div>
+                    <h3>Sujet personnalisé</h3>
+                    <p>Vous choisissez librement le sujet de votre article selon vos besoins et votre audience.</p>
+                </div>
+                <div class="advantage-card" data-delay="500">
+                    <div class="advantage-icon">📊</div>
+                    <h3>Optimisé SEO</h3>
+                    <p>Contenu optimisé pour les moteurs de recherche pour maximiser votre visibilité en ligne.</p>
+                </div>
+            </div>
+            <div class="counter-box">
+                <span class="counter-number" id="counter">0</span>
+                <span class="counter-text">Articles livrés cette semaine</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exemples Section -->
+    <section id="exemples">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💡 Exemples</span>
+                <h2>Des sujets adaptés à vos besoins</h2>
+                <p class="section-subtitle">Voici quelques exemples de sujets d'articles que nos clients commandent régulièrement.</p>
+            </div>
+            <div class="examples-grid">
+                <div class="example-card" data-delay="0">
+                    <span class="example-icon">📱</span>
+                    <span class="example-text">Comment lancer son e-commerce en Afrique</span>
+                </div>
+                <div class="example-card" data-delay="100">
+                    <span class="example-icon">💼</span>
+                    <span class="example-text">Les avantages du marketing digital pour les PME</span>
+                </div>
+                <div class="example-card" data-delay="200">
+                    <span class="example-icon">🚀</span>
+                    <span class="example-text">Guide complet du dropshipping</span>
+                </div>
+                <div class="example-card" data-delay="300">
+                    <span class="example-icon">💡</span>
+                    <span class="example-text">Stratégies de croissance pour startups africaines</span>
+                </div>
+                <div class="example-card" data-delay="400">
+                    <span class="example-icon">🌐</span>
+                    <span class="example-text">Réussir sa présence en ligne en 2025</span>
+                </div>
+                <div class="example-card" data-delay="500">
+                    <span class="example-icon">📈</span>
+                    <span class="example-text">Augmenter ses ventes avec le contenu marketing</span>
+                </div>
+                <div class="example-card" data-delay="600">
+                    <span class="example-icon">🎓</span>
+                    <span class="example-text">Formation en ligne : comment créer votre cours</span>
+                </div>
+                <div class="example-card" data-delay="700">
+                    <span class="example-icon">💰</span>
+                    <span class="example-text">Monétiser votre blog efficacement</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fonctionnement Section -->
+    <section id="fonctionnement">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🎯 Processus</span>
+                <h2>Comment ça marche ?</h2>
+                <p class="section-subtitle">Un processus simple et rapide en seulement 3 étapes.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step" data-delay="0">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">💳</div>
+                    <h3>Vous payez</h3>
+                    <p>Effectuez votre paiement de 2 500 FCFA en toute sécurité via Wave, Orange Money, MTN ou carte bancaire.</p>
+                </div>
+                <div class="step" data-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">📧</div>
+                    <h3>Vous recevez</h3>
+                    <p>Recevez votre article complet par email en 5 minutes maximum après confirmation du paiement.</p>
+                </div>
+                <div class="step" data-delay="400">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🚀</div>
+                    <h3>Vous publiez</h3>
+                    <p>Publiez immédiatement votre contenu formaté et optimisé sur votre blog ou site web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section id="temoignages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💬 Témoignages</span>
+                <h2>Ce que disent nos clients</h2>
+                <p class="section-subtitle">Des centaines de professionnels africains nous font confiance.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-delay="0">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Service incroyable ! J'ai reçu mon article en moins de 5 minutes. La qualité est excellente et j'ai pu le publier directement. Très recommandé !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Amara Diallo</h4>
+                            <span>Entrepreneur, Dakar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-delay="150">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Parfait pour ma PME ! Je n'avais pas le temps de rédiger. Maintenant je publie un nouvel article chaque semaine. Mon engagement a augmenté de 40% !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">K</div>
+                        <div class="author-info">
+                            <h4>Kofi Mensah</h4>
+                            <span>Propriétaire PME, Accra</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-delay="300">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Le meilleur investissement pour mon blog ! Le contenu est professionnel, bien structuré et optimisé. Mes visiteurs adorent !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">Z</div>
+                        <div class="author-info">
+                            <h4>Zainab Okafor</h4>
+                            <span>Blogueuse, Lagos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">❓ FAQ</span>
+                <h2>Questions fréquentes</h2>
+                <p class="section-subtitle">Trouvez rapidement les réponses à vos questions.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" data-delay="0">
+                    <button class="faq-question" aria-expanded="false">
+                        Puis-je choisir le sujet de mon article ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolument ! Vous choisissez complètement le sujet de votre article. Il vous suffit de l'indiquer dans le formulaire de commande et nous créerons un contenu unique basé sur vos spécifications.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-delay="100">
+                    <button class="faq-question" aria-expanded="false">
+                        Combien de temps pour recevoir mon article ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Vous recevrez votre article en 5 minutes maximum après le paiement. Notre système automatisé génère et envoie immédiatement votre contenu par email.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-delay="200">
+                    <button class="faq-question" aria-expanded="false">
+                        Est-ce que le contenu est vraiment unique ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui, chaque article est créé de manière unique selon vos spécifications. Aucun contenu n'est dupliqué et vous recevez un article original à chaque commande.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-delay="300">
+                    <button class="faq-question" aria-expanded="false">
+                        Quels sont les moyens de paiement acceptés ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nous acceptons Wave, Orange Money, MTN Money et les cartes bancaires (Visa, Mastercard) via notre partenaire de paiement sécurisé Paystack.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commander Section -->
+    <section id="commander">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-info">
+                    <span class="section-badge">🛒 Commander</span>
+                    <h2>Commandez votre article maintenant</h2>
+                    <ul class="order-features">
+                        <li><span>✓</span> Article professionnel de qualité</li>
+                        <li><span>✓</span> Livraison en 5 minutes par email</li>
+                        <li><span>✓</span> Format HTML prêt à publier</li>
+                        <li><span>✓</span> Optimisé pour le référencement SEO</li>
+                        <li><span>✓</span> Sujet 100% personnalisé</li>
+                        <li><span>✓</span> Paiement sécurisé Paystack</li>
+                    </ul>
+                </div>
+                <div class="order-form-container">
+                    <div id="orderFormDiv">
+                        <div class="form-header">
+                            <h3>Formulaire de commande</h3>
+                            <div class="form-price">2 500 FCFA</div>
+                        </div>
+                        <form id="orderForm" novalidate>
+                            <div class="form-group" id="emailGroup">
+                                <label for="email">📧 Adresse email *</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com" required aria-describedby="emailError">
+                                <span class="error-message" id="emailError">Veuillez entrer une adresse email valide</span>
+                            </div>
+                            <div class="form-group" id="sujetGroup">
+                                <label for="sujet">📝 Sujet de l'article *</label>
+                                <textarea id="sujet" name="sujet" placeholder="Décrivez le sujet de votre article (ex: Les avantages du marketing digital pour les PME africaines)" required aria-describedby="sujetError"></textarea>
+                                <span class="error-message" id="sujetError">Veuillez décrire le sujet de votre article</span>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-large btn-submit" onclick="payWithPaystack()">
+                                💳 Payer 2 500 FCFA maintenant
+                            </button>
+                        </form>
+                        <div class="trust-badges">
+                            <div class="badge-text">
+                                🔒 Paiement 100% sécurisé par Paystack
+                            </div>
+                            <div class="payment-icons">
+                                <span class="payment-icon">Wave</span>
+                                <span class="payment-icon">Orange Money</span>
+                                <span class="payment-icon">MTN</span>
+                                <span class="payment-icon">Visa</span>
+                                <span class="payment-icon">Mastercard</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">✅</div>
+                        <h3>Paiement réussi !</h3>
+                        <p>Vous recevrez votre article par email dans 5 minutes maximum.</p>
+                        <br>
+                        <button class="btn btn-primary" onclick="resetForm()">Commander un autre article</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à recevoir votre article professionnel ?</h2>
+                <p>Commandez maintenant et recevez votre contenu en 5 minutes</p>
+                <a href="#commander" class="btn btn-white btn-large">Commander - 2 500 FCFA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">📝 <span>Rédaction Pro Express</span></a>
+                    <p>Service de rédaction d'articles professionnels livré en 5 minutes par email. La solution idéale pour les blogueurs, entrepreneurs et PME en Afrique francophone.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#avantages">Avantages</a></li>
+                        <li><a href="#fonctionnement">Fonctionnement</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-contact">
+                        📧 <a href="mailto:ivojoel223@gmail.com">ivojoel223@gmail.com</a>
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Paiement sécurisé</h4>
+                    <p class="footer-contact">🔒 Propulsé par Paystack</p>
+                    <div class="footer-payment">
+                        <span>Wave</span>
+                        <span>Orange Money</span>
+                        <span>MTN</span>
+                        <span>Visa</span>
+                        <span>Mastercard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Rédaction Pro Express. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Variables
+        const typingText = "Rédaction Pro Express";
+        let charIndex = 0;
+        let counterValue = 0;
+        const targetCounter = 127;
+        let counterAnimated = false;
+
+        // Typing Effect
+        function typeText() {
+            const element = document.getElementById('typingText');
+            if (charIndex < typingText.length) {
+                element.innerHTML = typingText.substring(0, charIndex + 1).replace('Rédaction Pro Express', '<span class="gradient-text">Rédaction Pro Express</span>');
+                charIndex++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        // Counter Animation
+        function animateCounter() {
+            const counterElement = document.getElementById('counter');
+            if (counterValue < targetCounter) {
+                counterValue += Math.ceil((targetCounter - counterValue) / 10);
+                if (counterValue > targetCounter) counterValue = targetCounter;
+                counterElement.textContent = counterValue;
+                requestAnimationFrame(animateCounter);
+            }
+        }
+
+        // Scroll Animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.advantage-card, .example-card, .step, .testimonial-card, .faq-item');
+            
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight - 100;
+                
+                if (isVisible && !element.classList.contains('visible')) {
+                    const delay = element.dataset.delay || 0;
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, delay);
+                }
+            });
+
+            // Counter animation trigger
+            const counterBox = document.querySelector('.counter-box');
+            if (counterBox && !counterAnimated) {
+                const rect = counterBox.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    counterAnimated = true;
+                    animateCounter();
+                }
+            }
+        }
+
+        // Header scroll effect
+        function handleHeaderScroll() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Form Validation
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validateForm() {
+            const email = document.getElementById('email').value.trim();
+            const sujet = document.getElementById('sujet').value.trim();
+            let isValid = true;
+
+            // Email validation
+            const emailGroup = document.getElementById('emailGroup');
+            const emailInput = document.getElementById('email');
+            if (!email || !validateEmail(email)) {
+                emailGroup.classList.add('has-error');
+                emailInput.classList.add('error');
+                emailInput.classList.remove('success');
+                isValid = false;
+            } else {
+                emailGroup.classList.remove('has-error');
+                emailInput.classList.remove('error');
+                emailInput.classList.add('success');
+            }
+
+            // Sujet validation
+            const sujetGroup = document.getElementById('sujetGroup');
+            const sujetInput = document.getElementById('sujet');
+            if (!sujet || sujet.length < 10) {
+                sujetGroup.classList.add('has-error');
+                sujetInput.classList.add('error');
+                sujetInput.classList.remove('success');
+                isValid = false;
+            } else {
+                sujetGroup.classList.remove('has-error');
+                sujetInput.classList.remove('error');
+                sujetInput.classList.add('success');
+            }
+
+            return isValid;
+        }
+
+        // Real-time validation
+        document.getElementById('email').addEventListener('blur', function() {
+            const emailGroup = document.getElementById('emailGroup');
+            if (this.value && validateEmail(this.value)) {
+                emailGroup.classList.remove('has-error');
+                this.classList.remove('error');
+                this.classList.add('success');
+            } else if (this.value) {
+                emailGroup.classList.add('has-error');
+                this.classList.add('error');
+                this.classList.remove('success');
+            }
+        });
+
+        document.getElementById('sujet').addEventListener('blur', function() {
+            const sujetGroup = document.getElementById('sujetGroup');
+            if (this.value && this.value.length >= 10) {
+                sujetGroup.classList.remove('has-error');
+                this.classList.remove('error');
+                this.classList.add('success');
+            } else if (this.value) {
+                sujetGroup.classList.add('has-error');
+                this.classList.add('error');
+                this.classList.remove('success');
+            }
+        });
+
+        // Paystack Payment
+        function payWithPaystack() {
+            if (!validateForm()) {
+                return;
+            }
+
+            const email = document.getElementById('email').value.trim();
+            const sujet = document.getElementById('sujet').value.trim();
+
+            const handler = PaystackPop.setup({
+                key: 'pk_live_3a6b9b58cf907b40d7de5cf47c9d397664437173',
+                email: email,
+                amount: 250000, // 2 500 FCFA en kobo
+                currency: 'XOF',
+                metadata: {
+                    sujet: sujet,
+                    custom_fields: [
+                        {
+                            display_name: "Sujet de l'article",
+                            variable_name: "sujet",
+                            value: sujet
+                        }
+                    ]
+                },
+                callback: function(response) {
+                    // Paiement réussi
+                    document.getElementById('orderFormDiv').style.display = 'none';
+                    document.getElementById('successMessage').classList.add('show');
+                },
+                onClose: function() {
+                    // Transaction annulée par l'utilisateur
+                    console.log('Transaction annulée');
+                }
+            });
+            
+            handler.openIframe();
+        }
+
+        // Reset Form
+        function resetForm() {
+            document.getElementById('orderForm').reset();
+            document.getElementById('orderFormDiv').style.display = 'block';
+            document.getElementById('successMessage').classList.remove('show');
+            
+            // Reset validation states
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('has-error');
+            });
+            document.querySelectorAll('input, textarea').forEach(input => {
+                input.classList.remove('error', 'success');
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Event Listeners
+        window.addEventListener('scroll', () => {
+            handleScrollAnimations();
+            handleHeaderScroll();
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start typing effect
+            setTimeout(typeText, 500);
+            
+            // Initial scroll check
+            handleScrollAnimations();
+            handleHeaderScroll();
+        });
+    </script>
+</body>
+</html>
